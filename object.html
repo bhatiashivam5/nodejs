@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        th{ 
+            color:black;
+                }
+                table, th, td {
+  border: 1px solid black;
+}
+    </style>
+</head>
+<body>
+    <table class="table table-striped">
+    <tr  class="bg-info">
+        <th>FName</th>
+        <th>LName</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Qualification</th>
+    </tr>
+
+    <tbody id="myTable">
+        
+    </tbody>
+</table>
+
+<script>
+	var myArray = [
+	    {'fname':'Shivam', 'lname':'Bhatia','age':'30','gender':'Male','qualification':'B-Tech(CSE)'},
+	    {'fname':'Karan', 'lname':'Handa','age':'32', 'gender':'Male','qualification':'B-Tech(CSE)'},
+	    {'fname':'Rahul', 'lname':'Sharma','age':'29', 'gender':'Male','qualification':'B-Tech(CSE)'},
+	    {'fname':'Ajay', 'lname':'Kumar','age':'25', 'gender':'Male','qualification':'B-Tech(CSE)'},
+	  
+	]
+	
+	buildTable(myArray)
+
+
+
+	function buildTable(data){
+		var table = document.getElementById('myTable')
+
+		for (var i = 0; i < data.length; i++){
+			var row = `<tr>
+							<td>${data[i].fname}</td>
+                            <td>${data[i].lname}</td>
+							<td>${data[i].age}</td>
+                            <td>${data[i].gender}</td>
+							<td>${data[i].qualification}</td>
+					  </tr>`
+			table.innerHTML += row
+
+
+		}
+	}
+    console.log(myArray)
+
+</script>
+</body>
+</html>
